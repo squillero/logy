@@ -85,20 +85,20 @@ static inline void _Warning2(T... args) {
 
 #elif defined(VERBOSE)
 
-#define Debug(args...) 0
+#define Debug(args...) ((void)0)
 #define Info(args...) _Info(args)
 #define Warning(args...) _Warning(args)
-#define LOG_DEBUG(args...) 0
+#define LOG_DEBUG(args...) ((void)0)
 #define LOG_INFO(args...) _Info2(args)
 #define LOG_WARNING(args...) _Warning2(args)
 
 #else
 
-#define Debug(args...) 0
-#define Info(args...) 0
+#define Debug(args...) ((void)0)
+#define Info(args...) ((void)0)
 #define Warning(args...) _Warning(args)
-#define LOG_DEBUG(args...) 0
-#define LOG_INFO(args...) 0
+#define LOG_DEBUG(args...) ((void)0)
+#define LOG_INFO(args...) ((void)0)
 #define LOG_WARNING(args...) _Warning2(args)
 
 #endif
