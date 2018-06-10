@@ -11,7 +11,7 @@ Yet another C++ logger, no strings attached. *Logy* is very easy to use (its fun
 
 ### Instructions
 
-Add `logy.h` header file to an existing project, and call `Debug`, `Info`, and `Warning` with the `printf` syntax. Alternatively, use `LOG_DEBUG`, `LOG_INFO`, and `LOG_WARNING`, with a list of objects that would be acceptable to `std::cerr`'s `operator<<`. Some messages will be displayed and some will not according to the *verbosity level* set at compile time. In more details, these preprocessor macros enable the different *logy*'s messages:
+Add `logy.h` header file to an existing project, and call `Debug`, `Info`, and `Warning` with the `printf` syntax. Alternatively, use `LOG_DEBUG`, `LOG_INFO`, and `LOG_WARNING` with a list of objects that would be acceptable for `std::cerr`'s `operator<<`. Some messages will be displayed and some will not according to the *verbosity level* set at compile time. In more details, these preprocessor macros enable the different *logy*'s messages:
 
 |  | *nil* | VERBOSE | DEBUG |
 |---------|:-----:|:-------:|:-----:|
