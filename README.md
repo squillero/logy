@@ -51,7 +51,7 @@ you may get something like
 [10:26:00] DEBUG: To get debug messages you need to define DEBUG while compiling
 [10:26:00] INFO: To get info messages you need to define either DEBUG or VERBOSE
 [10:26:00] WARNING: You always get all warning messages
-[10:30:22] INFO: LOG_* macros mirror to std::cerr<<. Just list the objects!
+[10:26:00] INFO: LOG_* macros mirror to std::cerr<<. Just list the objects!
 ```
 
 ### Logy is public domain
