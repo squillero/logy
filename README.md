@@ -7,9 +7,9 @@ LOGY
 
 Yet another C++ logger, no strings attached. *Logy* is very easy to use (its functions either mirror `printf` or accept a simple list of generic objects), very easy to install (just drop `logy.h` into any existing project), and extremely efficient (everything is done at compile time).
 
-> If you need serious logging, you should use a full-fledged library, such as [Easylogging++](https://github.com/muflihun/easyloggingpp)
+> If you need serious logging, you should use a full-fledged library, such as [Easylogging++](https://github.com/muflihun/easyloggingpp) or [Loguru](https://github.com/emilk/loguru).
  
-*Logy* is based on [variadic macros](http://en.cppreference.com/w/cpp/preprocessor/replace) and [variadic templates](https://en.cppreference.com/w/cpp/language/parameter_pack), and thus requires a [C++11 compiler](https://en.cppreference.com/w/cpp/compiler_support).
+*Logy* is based on [variadic macros](http://en.cppreference.com/w/cpp/preprocessor/replace) and [variadic templates](https://en.cppreference.com/w/cpp/language/parameter_pack), and requires a [C++11 compiler](https://en.cppreference.com/w/cpp/compiler_support).
 
 ### Instructions
 
