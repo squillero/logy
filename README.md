@@ -7,7 +7,7 @@ LOGY
 
 Yet another C++ logger, no strings attached. *Logy* is very easy to use (its functions either mirror `printf` or accept a simple list of generic objects), very easy to install (just drop `logy.h` into any existing project), and extremely efficient (everything is done at compile time).
 
-> If you need serious logging, you should use a full-fledged library, such as [Easylogging++](https://github.com/muflihun/easyloggingpp)
+> If you need serious logging, you should use a full-fledged library, such as [Easylogging++](https://github.com/muflihun/easyloggingpp) or [Loguru](https://github.com/emilk/loguru).
 
 ### Instructions
 
@@ -18,10 +18,10 @@ Add `logy.h` header file to an existing project, and call `Debug`, `Info`, and `
 |Debug | | |   ✔   |
 |Info | | ✔ | ✔ |
 |Warning | ✔ | ✔ | ✔ |
+|Log | ✔ | ✔ | ✔ |
 |LOG_DEBUG | | | ✔ |
 |LOG_INFO | | ✔ | ✔ |
 |LOG_WARNING | ✔ | ✔ | ✔ |
-|Log | ✔ | ✔ | ✔ |
 |LOG_BARE | ✔ | ✔ | ✔ |
 
 Version 1.01 added `Log` and `LOG_BARE` for printing untagged messages (i.e., just the time stamp).
