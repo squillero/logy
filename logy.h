@@ -2,7 +2,7 @@
 
 // logy v1.01 -- A simplistic, light-weight, single-header C++ logger
 // (!) Summer 2018 by Giovanni Squillero <giovanni.squillero@polito.it>
-// This code has been dedicated to the public domain
+// This code has been dedicated to the public domain (see LICENSE.md)
 // Project page: https://github.com/squillero/logy
 
 #pragma once
