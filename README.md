@@ -36,7 +36,7 @@ Please note that *logy* is based on [variadic macros](http://en.cppreference.com
 #include "logy.h"
 
 int main() {
-    Log("This is version v1.01!");
+    Log("This is version v1.02!");
     Debug("To get debug messages you need to define DEBUG while compiling");
     Info("To get info messages you need to define either DEBUG or VERBOSE");
     Warning("You %s get all warning messages", std::string{"always"}.c_str());
@@ -55,7 +55,7 @@ g++ -std=c++11 -DVERBOSE main.cpp
 you may get something like
 
 ```
-[10:26:00] This is version v1.01!
+[10:26:00] This is version v1.02!
 [10:26:00] INFO: To get info messages you need to define either DEBUG or VERBOSE
 [10:26:00] WARNING: You always get all warning messages
 [10:26:00] INFO: LOG_* macros mirror to std::cerr<<. Just list the objects...
