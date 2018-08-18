@@ -1,8 +1,8 @@
 // -*- mode: c++ -*-
 
-// logy v1.01 -- A simplistic, light-weight, single-header C++ logger
+// logy v1.02 -- A simplistic, light-weight, single-header C++ logger
 // (!) Summer 2018 by Giovanni Squillero <giovanni.squillero@polito.it>
-// This code has been dedicated to the public domain (see LICENSE.md)
+// This code has been dedicated to the public domain
 // Project page: https://github.com/squillero/logy
 
 #pragma once
@@ -66,17 +66,17 @@ void _Silent(T... args) {
 
 // redundant, strictly speaking, but avoids the unaesthetic format-string-is-not-a-literal warning
 static void _Debug(const char *arg) {
-    logy_header("DEBUG: ");
+    logy_header(" DEBUG: ");
     std::fprintf(stderr, "%s\n", arg);
     std::fflush(stderr);
 }
 static void _Info(const char *arg) {
-    logy_header("INFO: ");
+    logy_header(" INFO: ");
     std::fprintf(stderr, "%s\n", arg);
     std::fflush(stderr);
 }
 static void _Warning(const char *arg) {
-    logy_header("WARNING: ");
+    logy_header(" WARNING: ");
     std::fprintf(stderr, "%s\n", arg);
     std::fflush(stderr);
 }
@@ -90,19 +90,19 @@ static void _Silent(const char *arg) {
 
 template<typename... T>
 static inline void _Debug2(T... args) {
-    logy_header("DEBUG:");
+    logy_header(" DEBUG:");
     logy_helper(std::forward<T>(args)...);
 }
 
 template<typename... T>
 static inline void _Info2(T... args) {
-    logy_header("INFO:");
+    logy_header(" INFO:");
     logy_helper(std::forward<T>(args)...);
 }
 
 template<typename... T>
 static inline void _Warning2(T... args) {
-    logy_header("WARNING:");
+    logy_header(" WARNING:");
     logy_helper(std::forward<T>(args)...);
 }
 

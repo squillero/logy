@@ -3,7 +3,7 @@ LOGY
 
 [![License: cc0-1.0](https://img.shields.io/badge/license-cc0--1.0-brightgreen.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 [![Language: C++11](https://img.shields.io/badge/language-C%2B%2B11-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B11)
-![Version: 1.0](https://img.shields.io/badge/version-1.0-lightgrey.svg)
+![Version: 1.02](https://img.shields.io/badge/version-1.0-lightgrey.svg)
 
 Yet another C++ logger, no strings attached. *Logy* is very easy to use (its functions either mirror `printf` or accept a simple list of generic objects), very easy to install (just drop `logy.h` into any existing project), and extremely efficient (everything is done at compile time).
 
