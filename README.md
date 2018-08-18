@@ -1,7 +1,7 @@
 LOGY
 ====
 
-[![License: cc0-1.0](https://img.shields.io/badge/license-cc0--1.0-brightgreen.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+[![License: cc0](https://img.shields.io/badge/license-cc0-brightgreen.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 [![Language: C++11](https://img.shields.io/badge/language-C%2B%2B11-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B11)
 ![Version: 1.02](https://img.shields.io/badge/version-1.02-lightgrey.svg)
 
