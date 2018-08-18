@@ -11,20 +11,20 @@ Yet another C++ logger, no strings attached. *Logy* is very easy to use (its fun
 
 ### Instructions
 
-Add `logy.h` header file to an existing project, and call `Debug`, `Info`, and `Warning` with the `printf` syntax. Alternatively, use `LOG_DEBUG`, `LOG_INFO`, and `LOG_WARNING` with a list of objects that would be acceptable for `std::cerr <<`. Some messages will be displayed and some will not, according to the *verbosity level* set at compile time. In more details, these preprocessor macros enable the different *logy*'s messages:
+Add `logy.h` header file to an existing project, and call `Log`, `Debug`, `Info`, and `Warning` with the `printf` syntax. Alternatively, use `LOG_BARE`, `LOG_DEBUG`, `LOG_INFO`, and `LOG_WARNING` with a list of objects that could be streamed to `std::cerr` (i.e., that would be acceptable for the operator `<<`). 
+
+Some messages will be displayed and some will not according to the *verbosity level* set at compile time. In more details, defining these preprocessor macros enables the different *logy*'s messages:
 
 |  | *nil* | VERBOSE | DEBUG |
 |---------|:-----:|:-------:|:-----:|
+|Log | ✔ | ✔ | ✔ |
 |Debug | | |   ✔   |
 |Info | | ✔ | ✔ |
 |Warning | ✔ | ✔ | ✔ |
-|Log | ✔ | ✔ | ✔ |
+|LOG_BARE | ✔ | ✔ | ✔ |
 |LOG_DEBUG | | | ✔ |
 |LOG_INFO | | ✔ | ✔ |
 |LOG_WARNING | ✔ | ✔ | ✔ |
-|LOG_BARE | ✔ | ✔ | ✔ |
-
-Version 1.01 added `Log` and `LOG_BARE` for printing untagged messages (i.e., just the time stamp).
 
 Please note that *logy* is based on [variadic macros](http://en.cppreference.com/w/cpp/preprocessor/replace) and [variadic templates](https://en.cppreference.com/w/cpp/language/parameter_pack), and thus requires a [C++11 compiler](https://en.cppreference.com/w/cpp/compiler_support). 
 
