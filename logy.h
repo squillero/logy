@@ -1,6 +1,6 @@
 // -*- mode: c++ -*-
 
-// logy v1.09 -- A simplistic, light-weight, single-header C++ logger
+// logy v1.1 -- A simplistic, light-weight, single-header C++ logger
 // (!) Summer 2018 by Giovanni Squillero <giovanni.squillero@polito.it>
 // This code has been dedicated to the public domain
 // Project page: https://github.com/squillero/logy
