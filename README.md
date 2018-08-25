@@ -12,9 +12,9 @@ Yet another C++ logger, no strings attached. *Logy* is very easy to use (its fun
 
 ### Instructions
 
-Add `logy.h` header file to an existing project, and call `Log`, `Debug`, `Info` and `Warning` with the `printf` syntax; alternatively, use `LOG_BARE`, `LOG_DEBUG`, `LOG_INFO` and `LOG_WARNING` with a list of objects. Some messages will be displayed and some will not according to the *verbosity level* set at compile time. 
+Add `logy.h` header file to an existing project, and call `Log`, `Debug`, `Info` and `Warning` with exactly the same syntax as `printf`; alternatively, use `LOG_BARE`, `LOG_DEBUG`, `LOG_INFO` and `LOG_WARNING` with a list of objects. Some messages will be displayed and some will not according to the *verbosity level* set at compile time. 
 
-`LOG_BARE`, `LOG_DEBUG`, `LOG_INFO` and `LOG_WARNING` accept objects that could be streamed directly to `std::cerr` (i.e., that would be acceptable for the operator `<<`), or `std::vectors` and `std::initializer_list` of such objects. Containers are unrolled as `[ e1 e2 ... eN ]` using [SFINAE](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/SFINAE); an alternative implementation, which exploits [tag dispatching](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Tag_Dispatching), is commented out in the code.
+`LOG_BARE`, `LOG_DEBUG`, `LOG_INFO` and `LOG_WARNING` accept objects that could be streamed directly to `std::cerr` (i.e., that would be acceptable for the operator `<<`), or `std::vectors` and `std::initializer_list` of such objects. Containers are recursively unrolled as `[ e1 e2 ... eN ]` using [SFINAE](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/SFINAE); an alternative implementation, which exploits [tag dispatching](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Tag_Dispatching), is commented out in the code.
 
 Defining these preprocessor macros enables the different *logy*'s messages:
 
