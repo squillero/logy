@@ -27,11 +27,11 @@ Some messages will be displayed and some will not according to the *verbosity le
 |LOG_INFO | | ✔ | ✔ |
 |LOG_WARNING | ✔ | ✔ | ✔ |
 
-Notez bien:
+#### Notez bien:
 
-* *logy* requires a [C++11 compiler](https://en.cppreference.com/w/cpp/compiler_support) as it is based on [variadic macros](http://en.cppreference.com/w/cpp/preprocessor/replace) and [variadic templates](https://en.cppreference.com/w/cpp/language/parameter_pack);
+* *Logy* is based on [variadic macros](http://en.cppreference.com/w/cpp/preprocessor/replace) and [variadic templates](https://en.cppreference.com/w/cpp/language/parameter_pack), and thus requires a [C++11 compiler](https://en.cppreference.com/w/cpp/compiler_support).
 
-* Vectors are supported through a very simple tag-dispatching mechanism. The helper type `conditional_t` requires a [C++14 compiler](https://en.cppreference.com/w/cpp/compiler_support), but the code could be easily changed back to be compatible with C++11.
+* *Logy* unrolls vectors using a very simple tag-dispatching mechanism. The helper type `conditional_t` requires a [C++14 compiler](https://en.cppreference.com/w/cpp/compiler_support), but the code could be easily changed to be compatible with C++11.
 
 * *VisualStudio* users may need to define `_CRT_SECURE_NO_WARNINGS` to avoid annoying messages.
 
