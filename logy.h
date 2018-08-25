@@ -43,7 +43,6 @@ static inline std::string tag_expand(T arg) {
     return tag_expand(arg, std::conditional_t<is_rangeloop_supported<T>::value, std::true_type, std::false_type>{});  // c++14
 }
 
-
 // helper functions
 
 static inline void logy_header(const char* tag) {
@@ -67,7 +66,7 @@ static inline void logy_helper(F first, R&&... rest) {
 
 template<typename... T>
 void _Debug(T... args) {
-    logy_header("DEBUG: ");
+    logy_header(" DEBUG: ");
     std::fprintf(stderr, args...);
     std::fprintf(stderr, "\n");
     std::fflush(stderr);
@@ -75,7 +74,7 @@ void _Debug(T... args) {
 
 template<typename... T>
 void _Info(T... args) {
-    logy_header("INFO: ");
+    logy_header(" INFO: ");
     std::fprintf(stderr, args...);
     std::fprintf(stderr, "\n");
     std::fflush(stderr);
@@ -83,7 +82,7 @@ void _Info(T... args) {
 
 template<typename... T>
 void _Warning(T... args) {
-    logy_header("WARNING: ");
+    logy_header(" WARNING: ");
     std::fprintf(stderr, args...);
     std::fprintf(stderr, "\n");
     std::fflush(stderr);
