@@ -12,7 +12,7 @@ Yet another C++ logger, no strings attached. *Logy* is very easy to use (its fun
 
 ### Instructions
 
-Add `logy.h` header file to an existing project, and call `Log`, `Debug`, `Info`, and `Warning` with the `printf` syntax. Alternatively, use `LOG_BARE`, `LOG_DEBUG`, `LOG_INFO`, and `LOG_WARNING` with a list of objects that could be streamed to `std::cerr` (i.e., that would be acceptable for the operator `<<`); whether objects are `std::vectors` or `std::initializer_list`, they are unrolled as `[ e1, e2, ..., eN ]`.
+Add `logy.h` header file to an existing project, and call `Log`, `Debug`, `Info`, and `Warning` with the `printf` syntax. Alternatively, use `LOG_BARE`, `LOG_DEBUG`, `LOG_INFO`, and `LOG_WARNING` with a list of objects that could be streamed to `std::cerr` (i.e., that would be acceptable for the operator `<<`); whether objects are `std::vectors` or `std::initializer_list`, they are unrolled as `[ e1 e2 ... eN ]`.
 
 Some messages will be displayed and some will not according to the *verbosity level* set at compile time. In more details, defining these preprocessor macros enables the different *logy*'s messages:
 
