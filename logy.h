@@ -1,16 +1,48 @@
 // -*- mode: c++ -*-
 
-// logy v1.02 -- A simplistic, light-weight, single-header C++ logger
+// logy v1.09 -- A simplistic, light-weight, single-header C++ logger
 // (!) Summer 2018 by Giovanni Squillero <giovanni.squillero@polito.it>
 // This code has been dedicated to the public domain
 // Project page: https://github.com/squillero/logy
 
 #pragma once
 
+#include <type_traits>
+#include <vector>
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <cstdio>
 #include <ctime>
+
+// vectors & initializer_list are supported using very very very simple tag dispatch
+
+template <typename T> struct is_rangeloop_supported { static const bool value = false; };
+template <typename T> struct is_rangeloop_supported<std::vector<T>> { static const bool value = true; };
+template <typename T> struct is_rangeloop_supported<std::initializer_list<T>> { static const bool value = true; };
+
+template<typename T>
+static inline std::string tag_expand(T arg, std::true_type) {
+    std::ostringstream ss;
+    ss << "[";
+    for(const auto e : arg)
+        ss << " " << tag_expand(e);
+    ss << " ]";
+    return ss.str();
+}
+
+template<typename T>
+static inline std::string tag_expand(T arg, std::false_type) {
+    std::ostringstream ss;
+    ss << arg;
+    return ss.str();
+}
+
+template<typename T>
+static inline std::string tag_expand(T arg) {
+    return tag_expand(arg, std::conditional_t<is_rangeloop_supported<T>::value, std::true_type, std::false_type>{});  // c++14
+}
+
 
 // helper functions
 
@@ -24,9 +56,10 @@ static inline void logy_header(const char* tag) {
 static inline void logy_helper() {
     std::cerr << std::endl;
 }
+
 template<typename F, typename... R>
-void logy_helper(F&& first, R&&... rest) {
-    std::cerr << " " << std::forward<F>(first);
+static inline void logy_helper(F first, R&&... rest) {
+    std::cerr << " " << tag_expand(first);
     logy_helper(std::forward<R>(rest)...);
 }
 
@@ -112,7 +145,7 @@ static inline void _Silent2(T... args) {
     logy_helper(std::forward<T>(args)...);
 }
 
-#if defined(DEBUG) or defined(LOGGING_DEBUG)
+#if defined(DEBUG) || defined(LOGGING_DEBUG)
 
 #define Debug(...) _Debug(__VA_ARGS__)
 #define Info(...) _Info(__VA_ARGS__)
