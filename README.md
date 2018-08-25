@@ -67,7 +67,7 @@ you may get something like
 [17:51:57] WARNING: You always get all warning messages
 [17:51:57] INFO: LOG_* macros mirror to std::cerr<<. Just list the objects...
 [17:51:57] INFO: A vector: [ [ foo bar baz ] [ Jake Elwood ] ]
-[```
+```
 
 ### Logy is public domain
 
