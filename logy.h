@@ -21,6 +21,9 @@ template <typename T> struct is_rangeloop_supported { static const bool value = 
 template <typename T> struct is_rangeloop_supported<std::vector<T>> { static const bool value = true; };
 template <typename T> struct is_rangeloop_supported<std::initializer_list<T>> { static const bool value = true; };
 
+template<typename T> static inline typename std::enable_if<is_rangeloop_supported<T>::value, std::string>::type tag_expand(T arg);
+template<typename T> static inline typename std::enable_if<!is_rangeloop_supported<T>::value, std::string>::type tag_expand(T arg);
+
 template<typename T>
 static inline typename std::enable_if<is_rangeloop_supported<T>::value, std::string>::type tag_expand(T arg) {
     std::ostringstream ss;
@@ -41,6 +44,9 @@ static inline typename std::enable_if<!is_rangeloop_supported<T>::value, std::st
 /**
  * Alt take using simple tag dispatch (requires C++14)
  *
+ * template<typename T> static inline std::string tag_expand(T arg);
+ *
+ * template<typename T>
  * static inline std::string tag_expand(T arg, std::true_type) {
  *     std::ostringstream ss;
  *     ss << "[";
@@ -63,7 +69,7 @@ static inline typename std::enable_if<!is_rangeloop_supported<T>::value, std::st
  * }
  **/
 
-// helper functions
+ // helper functions
 
 static inline void logy_header(const char* tag) {
     char timestamp[100] = "";
