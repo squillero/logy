@@ -199,5 +199,5 @@ static inline void _Silent2(T... args) {
 
 #endif
 
-#define Log(...) _Silent(__VA_ARGS__)
-#define LOG_BARE(...) _Silent2(__VA_ARGS__)
+#define Logy(...) _Silent(__VA_ARGS__)
+#define LOGY(...) _Silent2(__VA_ARGS__)

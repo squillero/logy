@@ -3,7 +3,7 @@ LOGY
 
 [![License: cc0](https://img.shields.io/badge/license-cc0-brightgreen.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 [![Language: C++11](https://img.shields.io/badge/language-C%2B%2B11-blue.svg)](https://en.wikipedia.org/wiki/C%2B%2B11)
-![Version: 1.2](https://img.shields.io/badge/version-1.2-lightgrey.svg)
+![Version: 1.2.1](https://img.shields.io/badge/version-1.2.1-lightgrey.svg)
 
 Yet another C++ logger, no strings attached. *Logy* is very easy to use (its functions either mirror `printf` or accept a simple list of generic objects), very easy to install (just drop `logy.h` into any existing project), and extremely efficient (everything is done at compile time).
 
@@ -12,19 +12,19 @@ Yet another C++ logger, no strings attached. *Logy* is very easy to use (its fun
 
 ### Instructions
 
-Add `logy.h` header file to an existing project, and call `Log`, `Debug`, `Info` and `Warning` with exactly the same syntax as `printf`; alternatively, use `LOG_BARE`, `LOG_DEBUG`, `LOG_INFO` and `LOG_WARNING` with a list of objects. Some messages will be displayed and some will not according to the *verbosity level* set at compile time. 
+Add `logy.h` header file to an existing project, and call `Logy`, `Debug`, `Info` and `Warning` with exactly the same syntax as `printf`; alternatively, use `LOGY`, `LOG_DEBUG`, `LOG_INFO` and `LOG_WARNING` with a list of objects. Some messages will be displayed and some will not according to the *verbosity level* set at compile time. 
 
-`LOG_BARE`, `LOG_DEBUG`, `LOG_INFO` and `LOG_WARNING` accept objects that could be streamed directly to `std::cerr` (i.e., that would be acceptable for the operator `<<`), or `std::vectors` and `std::initializer_list` of such objects. Containers are recursively unrolled as `[ e1 e2 ... eN ]` using [SFINAE](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/SFINAE); an alternative implementation, which exploits [tag dispatching](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Tag_Dispatching), is commented out in the code.
+`LOGY`, `LOG_DEBUG`, `LOG_INFO` and `LOG_WARNING` accept objects that could be streamed directly to `std::cerr` (i.e., that would be acceptable for the operator `<<`), or `std::vectors` and `std::initializer_list` of such objects. Containers are recursively unrolled as `[ e1 e2 ... eN ]` using [SFINAE](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/SFINAE); an alternative implementation, which exploits [tag dispatching](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Tag_Dispatching), is commented out in the code.
 
 Defining these preprocessor macros enables the different *logy*'s messages:
 
 |  | *nil* | VERBOSE | DEBUG |
 |---------|:-----:|:-------:|:-----:|
-|Log | ✔ | ✔ | ✔ |
+|Logy | ✔ | ✔ | ✔ |
 |Debug | | |   ✔   |
 |Info | | ✔ | ✔ |
 |Warning | ✔ | ✔ | ✔ |
-|LOG_BARE | ✔ | ✔ | ✔ |
+|LOGY | ✔ | ✔ | ✔ |
 |LOG_DEBUG | | | ✔ |
 |LOG_INFO | | ✔ | ✔ |
 |LOG_WARNING | ✔ | ✔ | ✔ |
@@ -43,7 +43,7 @@ Defining these preprocessor macros enables the different *logy*'s messages:
 #include "logy.h"
 
 int main() {
-    Log("This is version v1.2!");
+    Log("This is version v1.2.1!");
     Debug("To get debug messages you need to define DEBUG while compiling");
     Info("To get info messages you need to define either DEBUG or VERBOSE");
     Warning("You %s get all warning messages", std::string{"always"}.c_str());
@@ -58,13 +58,13 @@ int main() {
 compiling with 
 
 ```sh
-g++ -std=c++14 -DVERBOSE main.cpp
+g++ -std=c++11 -DVERBOSE main.cpp
 ```
 
 you may get something like
 
 ```
-[17:51:57] This is version v1.2!
+[17:51:57] This is version v1.2.1!
 [17:51:57] INFO: To get info messages you need to define either DEBUG or VERBOSE
 [17:51:57] WARNING: You always get all warning messages
 [17:51:57] INFO: LOG_* macros mirror to std::cerr<<. Just list the objects...
