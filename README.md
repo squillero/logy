@@ -7,8 +7,7 @@ LOGY
 
 Yet another C++ logger, no strings attached. *Logy* is very easy to use (its functions either mirror `printf` or accept a simple list of generic objects), very easy to install (just drop `logy.h` into any existing project), and extremely efficient (everything is done at compile time).
 
-> If you need serious logging, you should use a full-fledged library, such as [*Easylogging++*](https://github.com/muflihun/easyloggingpp) or [*Loguru*](https://github.com/emilk/loguru). A much simpler library, still more complex and powerful than *logy*, is [*plog*](https://github.com/SergiusTheBest/plog).
-
+> If you need serious logging, you should use a full-fledged library.
 
 ### Instructions
 
