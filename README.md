@@ -42,7 +42,7 @@ Defining these preprocessor macros enables the different *logy*'s messages:
 #include "logy.h"
 
 int main() {
-    Log("This is version v1.2.1!");
+    Logy("This is version v1.2.1!");
     Debug("To get debug messages you need to define DEBUG while compiling");
     Info("To get info messages you need to define either DEBUG or VERBOSE");
     Warning("You %s get all warning messages", std::string{"always"}.c_str());
