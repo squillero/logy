@@ -70,6 +70,5 @@ you may get something like
 [17:51:57] INFO: A vector: [ [ foo bar baz ] [ Jake Elwood ] ]
 ```
 
-### Logy is public domain
-
+*Logy is public domain*  
 Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means. See [LICENSE.md](/LICENSE.md) for more details.
