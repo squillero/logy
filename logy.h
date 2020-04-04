@@ -179,7 +179,7 @@ static inline void _Silent2(T... args) {
 #define LOG_INFO(...) _Info2(__VA_ARGS__)
 #define LOG_WARNING(...) _Warning2(__VA_ARGS__)
 
-#elif defined(VERBOSE) or defined(LOGGING_VERBOSE)
+#elif defined(VERBOSE) || defined(LOGGING_VERBOSE)
 
 #define Debug(...) ((void)0)
 #define Info(...) _Info(__VA_ARGS__)
